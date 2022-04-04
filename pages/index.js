@@ -1,7 +1,9 @@
 import Header from "../components/Header";
-
+import BuyTokens from "../components/BuyTokens";
+import Notice from "../components/Notice";
 import {BiDotsHorizontalRounded} from 'react-icons/bi';
 import {AiOutlinePlus} from "react-icons/ai"
+import PortfolioChart from "../components/PortfolioChart";
 
 const styles = {
   wrapper: "w-screen h-screen flex flex-col",
@@ -42,7 +44,7 @@ export default function Home() {
           </div>
           <div>
             <div className={styles.chartContainer}>
-              { /*<PortfolioChart/> */}
+              <PortfolioChart/>
             </div>
           </div>
           <div className={styles.buyingPowerContainer}>
@@ -57,10 +59,10 @@ export default function Home() {
               <div className={styles.noticeMessage}>
                 Transfer your funds here.
               </div>
-              {/* <BuyTokens /> */}
+              <BuyTokens />
             </div>
           </div>
-          {/* <Notice /> */}
+          <Notice />
         </div>
           <div className={styles.rightMain}>
             <div className={styles.rightMainItem}>
