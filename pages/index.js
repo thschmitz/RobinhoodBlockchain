@@ -4,6 +4,7 @@ import Notice from "../components/Notice";
 import {BiDotsHorizontalRounded} from 'react-icons/bi';
 import {AiOutlinePlus} from "react-icons/ai"
 import PortfolioChart from "../components/PortfolioChart";
+import Assets from "../components/Assets";
 
 const styles = {
   wrapper: "w-screen h-screen flex flex-col",
@@ -72,7 +73,10 @@ export default function Home() {
               <BiDotsHorizontalRounded className={styles.moreOptions} />
             </div>
             {/* Map through coins and for every coin make an Asset Component */}
-            {/* <Asset/> */}
+            <Assets coin={"BTC"} price={0.89}/>
+            <Assets coin={"SOL"} price={0.89}/>
+            <Assets coin={"ETH"} price={0.89}/>
+            <Assets coin={"USDC"} price={0.89}/>
 
             <div className={styles.rightMainItem}>
               <div className={styles.ItemTitle}>
