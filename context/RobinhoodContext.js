@@ -8,14 +8,14 @@ export const RobinhoodProvider = ({children}) => {
     const [currentAccount, setCurrentAccount] = useState()
     const [formattedAccount, setFormattedAccount] = useState()
 
-    const {isAuthenticated, authenticate, user, logout, Moralis,  enableWeb3} = useMoralis();
+    const {isAuthenticated, authenticate, user, logout, enableWeb3} = useMoralis();
 
     useEffect(() => {
         if(isAuthenticated){
-            const account = user.get("ethAddress");
-            let formattedAccount = account.slice(0, 4) + "..." + account.slice(account.length - 4);
-            setFormattedAccount(formattedAccount)
-            setCurrentAccount(account)
+          const account = user.get("ethAddress");
+          let formattedAccount = account.slice(0, 4) + "..." + account.slice(account.length - 4);
+          setFormattedAccount(formattedAccount)
+          setCurrentAccount(account)
         }
     }, [isAuthenticated, enableWeb3])
 
