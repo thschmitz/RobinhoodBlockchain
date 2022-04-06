@@ -19,6 +19,23 @@ export const RobinhoodProvider = ({children}) => {
         }
     }, [isAuthenticated, enableWeb3])
 
+    useEffect(() => {
+        if (!currentAccount) return
+        ;(async () => {
+          const response = await fetch('/api/createUser', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              walletAddress: currentAccount,
+            }),
+          })
+    
+          const data = await response.json()
+        })()
+      }, [currentAccount])
+
     const connectWallet = () => {
         authenticate();
     }
@@ -30,6 +47,6 @@ export const RobinhoodProvider = ({children}) => {
 
 
     return(
-        <RobinhoodContext.Provider value={{}}>{children}</RobinhoodContext.Provider>
+        <RobinhoodContext.Provider value={{connectWallet, signOut, currentAccount, isAuthenticated, formattedAccount}}>{children}</RobinhoodContext.Provider>
     )
 }
